@@ -1,0 +1,25 @@
+from PIL import Image
+img = Image.open("../assets/evening2.jpg")
+# L = R * 299/1000 + G * 587/1000+ B * 114/1000
+L = img.convert("L")
+l = img.convert("1")
+P = img.convert("P")
+RGBA = img.convert("RGBA") # important
+
+print(img.mode)
+print(L.mode)
+print(l.mode)
+print(P.mode)
+
+print(img.getpixel((0,0)))
+print(L.getpixel((0,0)))
+print(l.getpixel((0,0)))
+print(P.getpixel((0,0)))
+
+img.show()
+L.show()
+l.show()
+RGBA.show()
+
+
+# L = R * 299/1000 + G * 587/1000+ B * 114/1000
